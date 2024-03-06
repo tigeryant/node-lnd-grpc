@@ -93,7 +93,25 @@ v14Services.map((service) => {
   return service
 })
 
+const v17Services = cloneDeep([...v14Services],
+  {
+    name: 'Dev',
+    proto: 'devrpc/dev.proto',
+  }, 
+  {
+    name: 'Neutrino',
+    proto: 'neutrinorpc/neutrino.proto',
+  }, 
+  {
+    name: 'Peers',
+    proto: 'peersrpc/peers.proto',
+  }, 
+  )
+
 export default {
+  '0.17.4-beta': {
+    services: v17Services,
+  },
   '0.14.4-beta': {
     services: v14Services,
   },
